@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = Pbf;
 
 var ieee754 = require('ieee754');

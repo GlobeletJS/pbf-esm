@@ -1,5 +1,3 @@
-'use strict';
-
 var runStats = require('tile-stats-runner');
 var Tile = require('./vector_tile').Tile;
 var Pbf = require('../');

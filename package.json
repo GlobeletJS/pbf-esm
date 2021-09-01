@@ -4,7 +4,6 @@
   "description": "a low-level, lightweight protocol buffers implementation in JavaScript",
   "main": "index.js",
   "unpkg": "dist/pbf.js",
-  "jsdelivr": "dist/pbf.js",
   "scripts": {
     "bench": "node bench/bench.js",
     "test": "eslint index.js compile.js test/*.js bench/bench-tiles.js bin/pbf && tap test/*.test.js && npm run build-min",
@@ -43,18 +42,18 @@
   },
   "homepage": "https://github.com/mapbox/pbf",
   "dependencies": {
-    "ieee754": "^1.1.12",
+    "ieee754": "^1.2.1",
     "resolve-protobuf-schema": "^2.1.0"
   },
   "devDependencies": {
     "benchmark": "^2.1.4",
     "browserify": "^16.2.3",
-    "eslint": "^5.15.1",
+    "eslint": "^7.32.0",
     "eslint-config-mourner": "^2.0.3",
     "mkdirp": "^0.5.1",
     "protobufjs": "^6.8.8",
     "protocol-buffers": "^4.1.0",
-    "tap": "^12.6.0",
+    "tap": "^15.0.9",
     "tile-stats-runner": "^1.0.0",
     "uglify-js": "^3.6.1"
   },

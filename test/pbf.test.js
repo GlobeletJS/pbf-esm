@@ -1,11 +1,9 @@
-'use strict';
-
 var Pbf = require('../'),
     fs = require('fs'),
     path = require('path'),
     test = require('tap').test;
 
-/*eslint comma-spacing: 0*/
+/* eslint comma-spacing: 0 */
 
 function toArray(buf) {
     var arr = [];

@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = compile;
 
 var version = require('./package.json').version;
