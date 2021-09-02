@@ -2,7 +2,8 @@
   "name": "pbf",
   "version": "3.2.1",
   "description": "a low-level, lightweight protocol buffers implementation in JavaScript",
-  "main": "index.js",
+  "main": "dist/pbf-cjs.js",
+  "module": "dist/pbf-esm.js",
   "unpkg": "dist/pbf.js",
   "scripts": {
     "bench": "node bench/bench.js",
@@ -46,6 +47,8 @@
     "resolve-protobuf-schema": "^2.1.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "benchmark": "^2.1.4",
     "browserify": "^16.2.3",
     "eslint": "^7.32.0",
@@ -53,6 +56,7 @@
     "mkdirp": "^0.5.1",
     "protobufjs": "^6.8.8",
     "protocol-buffers": "^4.1.0",
+    "rollup": "^2.56.3",
     "tap": "^15.0.9",
     "tile-stats-runner": "^1.0.0",
     "uglify-js": "^3.6.1"
