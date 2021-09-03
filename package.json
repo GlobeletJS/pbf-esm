@@ -1,6 +1,6 @@
 {
   "name": "pbf-esm",
-  "version": "3.2.1",
+  "version": "4.0.0",
   "description": "a low-level, lightweight protocol buffers implementation in JavaScript",
   "main": "dist/pbf-cjs.js",
   "module": "dist/pbf-esm.js",
