@@ -1,13 +1,19 @@
 # pbf-esm
 
-A fork of Mapbox's [pbf][] module, set up for ESM `import` rather than CJS `require`.
+A fork of Mapbox's [pbf][] module, set up for ESM `import`
 
-A low-level, fast, ultra-lightweight (3KB gzipped) JavaScript library for decoding and encoding [protocol buffers](https://developers.google.com/protocol-buffers), a compact binary format for structured data serialization. Works both in Node and the browser. Supports lazy decoding and detailed customization of the reading/writing code.
+A low-level, fast, ultra-lightweight (3KB gzipped) JavaScript library for
+decoding and encoding [protocol buffers][], a compact binary format for
+structured data serialization. Works both in Node and the browser.
+Supports lazy decoding and detailed customization of the reading/writing code.
+
+[pbf]: https://github.com/mapbox/pbf
+[protocol buffers]: https://developers.google.com/protocol-buffers
 
 ## Performance
 
 This library is extremely fast — much faster than native `JSON.parse`/`JSON.stringify`
-and the [protocol-buffers](https://github.com/mafintosh/protocol-buffers) module.
+and the [protocol-buffers module][].
 Here's a result from running a real-world benchmark on Node v6.5
 (decoding and encoding a sample of 439 vector tiles, 22.6 MB total):
 
@@ -18,9 +24,11 @@ Here's a result from running a real-world benchmark on Node v6.5
 - **JSON.parse**: 1540ms, or 125 MB/s (parsing an equivalent 77.5 MB JSON file)
 - **JSON.stringify**: 607ms, or 49 MB/s
 
+[protocol-buffers module]: https://github.com/mafintosh/protocol-buffers
+
 ## Examples
 
-#### Using Compiled Code
+### Using Compiled Code
 
 Install `pbf` and compile a JavaScript module from a `.proto` file:
 
@@ -66,7 +74,7 @@ var proto = require('./example.proto');
 var Test = proto.Test;
 ```
 
-#### Custom Reading
+### Custom Reading
 
 ```js
 var data = new Pbf(buffer).readFields(readData, {});
@@ -82,7 +90,7 @@ function readLayer(tag, layer, pbf) {
 }
 ```
 
-#### Custom Writing
+### Custom Writing
 
 ```js
 var pbf = new Pbf();
@@ -137,7 +145,7 @@ pbf.length; // length of the underlying buffer
 pbf.pos; // current offset for reading or writing
 ```
 
-#### Reading
+### Reading
 
 Read a sequence of fields:
 
@@ -210,7 +218,7 @@ Packed reading methods:
 * `readPackedFloat(arr)`
 * `readPackedDouble(arr)`
 
-#### Writing
+### Writing
 
 Write values:
 
