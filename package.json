@@ -1,17 +1,14 @@
 {
-  "name": "pbf",
+  "name": "pbf-esm",
   "version": "3.2.1",
   "description": "a low-level, lightweight protocol buffers implementation in JavaScript",
   "main": "dist/pbf-cjs.js",
   "module": "dist/pbf-esm.js",
-  "unpkg": "dist/pbf.js",
   "scripts": {
+    "build": "rollup -c build/rollup.config.js",
     "bench": "node bench/bench.js",
     "test": "eslint index.js compile.js test/*.js bench/bench-tiles.js bin/pbf && tap test/*.test.js && npm run build-min",
-    "cov": "tap test/*.test.js --cov --coverage-report=html",
-    "build-min": "mkdirp dist && browserify index.js -s Pbf | uglifyjs -c -m > dist/pbf.js",
-    "build-dev": "mkdirp dist && browserify index.js -d -s Pbf > dist/pbf-dev.js",
-    "prepublishOnly": "npm run build-dev && npm run build-min"
+    "cov": "tap test/*.test.js --cov --coverage-report=html"
   },
   "files": [
     "bin",
@@ -50,7 +47,6 @@
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "benchmark": "^2.1.4",
-    "browserify": "^16.2.3",
     "eslint": "^7.32.0",
     "eslint-config-mourner": "^2.0.3",
     "mkdirp": "^0.5.1",
@@ -58,8 +54,7 @@
     "protocol-buffers": "^4.1.0",
     "rollup": "^2.56.3",
     "tap": "^15.0.9",
-    "tile-stats-runner": "^1.0.0",
-    "uglify-js": "^3.6.1"
+    "tile-stats-runner": "^1.0.0"
   },
   "eslintConfig": {
     "extends": "mourner",

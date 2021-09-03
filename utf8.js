@@ -17,25 +17,19 @@ export function readUtf8(buf, pos, end) {
         var b1, b2, b3;
 
         if (bytesPerSequence === 1) {
-            if (b0 < 0x80) {
-                c = b0;
-            }
+            if (b0 < 0x80) c = b0;
         } else if (bytesPerSequence === 2) {
             b1 = buf[i + 1];
             if ((b1 & 0xC0) === 0x80) {
                 c = (b0 & 0x1F) << 0x6 | (b1 & 0x3F);
-                if (c <= 0x7F) {
-                    c = null;
-                }
+                if (c <= 0x7F) c = null;
             }
         } else if (bytesPerSequence === 3) {
             b1 = buf[i + 1];
             b2 = buf[i + 2];
             if ((b1 & 0xC0) === 0x80 && (b2 & 0xC0) === 0x80) {
                 c = (b0 & 0xF) << 0xC | (b1 & 0x3F) << 0x6 | (b2 & 0x3F);
-                if (c <= 0x7FF || (c >= 0xD800 && c <= 0xDFFF)) {
-                    c = null;
-                }
+                if (c <= 0x7FF || (c >= 0xD800 && c <= 0xDFFF)) c = null;
             }
         } else if (bytesPerSequence === 4) {
             b1 = buf[i + 1];
@@ -43,9 +37,7 @@ export function readUtf8(buf, pos, end) {
             b3 = buf[i + 3];
             if ((b1 & 0xC0) === 0x80 && (b2 & 0xC0) === 0x80 && (b3 & 0xC0) === 0x80) {
                 c = (b0 & 0xF) << 0x12 | (b1 & 0x3F) << 0xC | (b2 & 0x3F) << 0x6 | (b3 & 0x3F);
-                if (c <= 0xFFFF || c >= 0x110000) {
-                    c = null;
-                }
+                if (c <= 0xFFFF || c >= 0x110000) c = null;
             }
         }
 

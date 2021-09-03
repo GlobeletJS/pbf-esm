@@ -1,6 +1,6 @@
-# pbf
+# pbf-esm
 
-[![build status](https://secure.travis-ci.org/mapbox/pbf.svg)](http://travis-ci.org/mapbox/pbf) [![Coverage Status](https://coveralls.io/repos/mapbox/pbf/badge.svg)](https://coveralls.io/r/mapbox/pbf)
+A fork of Mapbox's [pbf][] module, set up for ESM `import` rather than CJS `require`.
 
 A low-level, fast, ultra-lightweight (3KB gzipped) JavaScript library for decoding and encoding [protocol buffers](https://developers.google.com/protocol-buffers), a compact binary format for structured data serialization. Works both in Node and the browser. Supports lazy decoding and detailed customization of the reading/writing code.
 
@@ -32,8 +32,8 @@ $ pbf example.proto > example.js
 Then read and write objects using the module like this:
 
 ```js
-var Pbf = require('pbf');
-var Example = require('./example.js').Example;
+import Pbf from "pbf-esm";
+import { Example } from "./example.js";
 
 // read
 var pbf = new Pbf(buffer);
