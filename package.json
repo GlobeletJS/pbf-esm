@@ -8,7 +8,8 @@
     "build": "rollup -c build/rollup.config.js",
     "bench": "node bench/bench.js",
     "test": "eslint index.js compile.js test/*.js bench/bench-tiles.js bin/pbf && tap test/*.test.js && npm run build-min",
-    "cov": "tap test/*.test.js --cov --coverage-report=html"
+    "cov": "tap test/*.test.js --cov --coverage-report=html",
+    "postversion": "git push && git push --tags"
   },
   "files": [
     "bin",
